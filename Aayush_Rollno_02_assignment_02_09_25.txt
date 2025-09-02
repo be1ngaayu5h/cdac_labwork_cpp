@@ -1,0 +1,243 @@
+PRN: 250847320002
+Name: Aayush Sanjay Pardeshi
+Email: pardeshiaayush27@gmail.com
+----------------------------------------------------------------------------------------------------------------------------------
+/*1.Create a class named 'Student' with a string variable 'name' and an integer variable 'roll_no'. Assign
+the value of roll_no as '2' and that of name as "John" by creating an object of the class Student.*/
+#include <iostream>
+using namespace std;
+class Student1 {
+public:
+    string name;
+    int roll_no;
+
+    Student1() {
+        name = "John";
+        roll_no = 2;
+    }
+};
+
+int main() {
+    Student1 st;
+    cout << "Name: " << st.name << ", Roll No: " << st.roll_no << endl;
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
+/*
+2.Assign and print the roll number, phone number and address of two students having names "Sam"
+and "John" respectively by creating two objects of the class 'Student'.
+*/
+#include <iostream>
+using namespace std;
+class Student2 {
+public:
+    string name;
+    int roll_no;
+    string phone;
+    string address;
+
+    Student2(string n, int r, string p, string a) {
+        name = n;
+        roll_no = r;
+        phone = p;
+        address = a;
+    }
+};
+
+int main() {
+    Student2 st1("Aayush", 1, "1234567890", "Narayan Peth Pune");
+    Student2 st2("Akhilesh", 2, "0987654321", "Shaniwar peth Pune");
+
+    cout << "Name: " << st1.name << ", Roll No: " << st1.roll_no 
+         << ", Phone: " << st1.phone << ", Address: " << st1.address << endl;
+
+    cout << "Name: " << st2.name << ", Roll No: " << st2.roll_no 
+         << ", Phone: " << st2.phone << ", Address: " << st2.address << endl;
+
+    return 0;
+}
+-------------------------------------------------------------------------------------------
+/*
+3.Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5 units by
+creating a class named 'Triangle' with a function to print the area and perimeter.
+*/
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Triangle3 {
+public:
+    int a = 3, b = 4, c = 5;
+
+    void printAreaPerimeter() {
+        int perimeter = a + b + c;
+        float s = perimeter / 2.0;
+        float area = sqrt(s * (s - a) * (s - b) * (s - c));
+
+        cout << "\nArea of Triangle is: " << area << "\nPerimeter of Triangle is: " << perimeter << endl;
+    }
+};
+
+int main() {
+    Triangle3 tri;
+    tri.printAreaPerimeter();
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------
+/*
+4.
+Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5 units by
+creating a class named 'Triangle' with the constructor having the three sides as its parameters.
+*/
+#include <iostream>
+#include <cmath>
+using namespace std;
+class Triangle4 {
+    int a, b, c;
+
+public:
+    Triangle4(int x, int y, int z) {
+        a = x;
+        b = y;
+        c = z;
+    }
+
+    void printAreaPerimeter() {
+        int perimeter = a + b + c;
+        float s = perimeter / 2.0;
+        float area = sqrt(s * (s - a) * (s - b) * (s - c));
+
+        cout << "Area: " << area << ", Perimeter: " << perimeter << endl;
+    }
+};
+
+int main() {
+    Triangle4 t4(3, 4, 5);
+    t4.printAreaPerimeter();
+    return 0;
+}
+--------------------------------------------------------------------------------------
+/*
+5.Write a program to print the area of two rectangles having sides (4,5) and (5,8) respectively by
+creating a class named 'Rectangle' with a function named 'Area' which returns the area. Length and
+breadth are passed as parameters to its constructor.
+*/
+#include <iostream>
+using namespace std;
+class Rectangle {
+    int length, breadth;
+
+public:
+    Rectangle(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    int Area() {
+        return length * breadth;
+    }
+};
+
+int main() {
+    Rectangle rect1(4, 5);
+    Rectangle rect2(5, 8);
+
+    cout << "Area of Rectangle 1: " << rect1.Area() << endl;
+    cout << "Area of Rectangle 2: " << rect2.Area() << endl;
+    return 0;
+}
+----------------------------------------------------------------------------
+/*
+6.Write a program to print the area of a rectangle by creating a class named 'Area' having two
+functions. First function named as 'setDim' takes the length and breadth of the rectangle as
+parameters and the second function named as 'getArea' returns the area of the rectangle. Length and
+breadth of the rectangle are entered through keyboard.
+*/
+#include <iostream>
+using namespace std;
+class Area6 {
+    int length, breadth;
+
+public:
+    void setDim(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    int getArea() {
+        return length * breadth;
+    }
+};
+
+int main() {
+    int l, b;
+    cout << "Enter length: ";
+    cin >> l;
+    cout << "Enter breadth: ";
+    cin >> b;
+
+    Area6 rect;
+    rect.setDim(l, b);
+    cout << "Area: " << rect.getArea() << endl;
+    return 0;
+}
+----------------------------------------------------------------------------------------------
+/*
+7.Write a program to print the area of a rectangle by creating a class named 'Area' taking the values of
+its length and breadth as parameters of its constructor and having a function named 'return Area'
+which returns the area of the rectangle. Length and breadth of the rectangle are entered through
+keyboard.
+*/
+#include <iostream>
+using namespace std;
+class Area7 {
+    int length, breadth;
+
+public:
+    Area7(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    int returnArea() {
+        return length * breadth;
+    }
+};
+
+int main() {
+    int l, b;
+    cout << "Enter length: ";
+    cin >> l;
+    cout << "Enter breadth: ";
+    cin >> b;
+
+    Area7 rect(l, b);
+    cout << "Area: " << rect.returnArea() << endl;
+    return 0;
+}
+----------------------------------------------------------------------------------
+/*
+8.Print the average of three numbers entered by the user by creating a class named 'Average' having a
+function to calculate and print the average without creating any object of the Average class.
+*/
+
+#include <iostream>
+using namespace std;
+class Average8 {
+public:
+    static void calculateAverage(float a, float b, float c) {
+        float avg = (a + b + c) / 3;
+        cout << "Average: " << avg << endl;
+    }
+};
+
+int main() {
+    float x, y, z;
+    cout << "Enter three numbers: ";
+    cin >> x >> y >> z;
+
+    Average8::calculateAverage(x, y, z);
+    return 0;
+}
+---------------------------------------------------------
+------------------END OF ASSIGNMENT----------------------
